@@ -1,0 +1,2 @@
+# leetcode
+leetnode note
