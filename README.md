@@ -1,5 +1,5 @@
 # leetcode
-leetnode note
+my leetcode note
 ## Python modules
 1. list.sort(__key = lambda x: x[1]__)
 
