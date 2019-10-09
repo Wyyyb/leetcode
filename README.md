@@ -1,5 +1,5 @@
-# leetcode
-my leetcode note
+# leetcode note
+
 ## Python modules
 1. list.sort(__key = lambda x: x[1]__)
 
@@ -41,7 +41,7 @@ similarly it __costs O(nlogm) to find__ "top" and "bottom". __The entire algorit
 
 ### part 2:
 
-__view ... in the form of a tree
+__view ... in the form of a tree__
 
 in order to do this traversal, one of the simplest schemes is to __undergo__ depth first search. In this case, we choose one path at a time and try to go as deep as possible into the levels of the tree before going for the next path. In order to implement this, we make use of a __recursive function__ dfs(maze, start, destination, visited). This function __takes the given maze array, the start position and the destination position as its arguments along with__ a visited set. A tuple(x, y) represents that the position maze[x][y] has already been reached earlier during the path traversal. We make use of this set __so as to keep track of the same paths being repeated over and over__. We add the current position into the visited set once we reach that particular position in the maze.
 
