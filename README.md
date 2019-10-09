@@ -5,9 +5,9 @@
 
 2. graph = __collections.defaultdict(list)__
 
-3. __heapify__(list)     
+3. __heapq.heapify__(list)     
 a = __heapq.pop(queue)__  
-__heapq.push(b)__
+__heapq.push(queue, ele)__
 
 4. dq = __collections.deque(list)__      
 append, appendleft, clear, copy(shallow copy), count(dp.count(23)means counting the num of 23 in dq), extend, extendleft, 
@@ -120,6 +120,8 @@ KRUSKAL(G):
 ```
 ### 5. breath first search
 ```
+visited = set()
+queue = []
 def bfs(posi):
     nonlocal queue, visited
     vd = validdirc(posi)
