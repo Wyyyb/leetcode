@@ -39,6 +39,18 @@ however, the __projection step cost O(mn) time__ which __dominate__ the entire a
 
 similarly it __costs O(nlogm) to find__ "top" and "bottom". __The entire algorithm has a time complexity of__ O(nlogm + mlogn)
 
+### part 2:
+
+__view ... in the form of a tree
+
+in order to do this traversal, one of the simplest schemes is to __undergo__ depth first search. In this case, we choose one path at a time and try to go as deep as possible into the levels of the tree before going for the next path. In order to implement this, we make use of a __recursive function__ dfs(maze, start, destination, visited). This function __takes the given maze array, the start position and the destination position as its arguments along with__ a visited set. A tuple(x, y) represents that the position maze[x][y] has already been reached earlier during the path traversal. We make use of this set __so as to keep track of the same paths being repeated over and over__. We add the current position into the visited set once we reach that particular position in the maze.
+
+the same search space tree can also be __explored__ in a breath first search __manner__. 
+
+while performing the DFS, we need to keep track of the nodes we've already visited in order to __avoid going "back and forth" indefinitely__.
+
+
+
 
 
 
@@ -105,6 +117,27 @@ KRUSKAL(G):
                 for edge_cost, next_city in G[city]:
                     heapq.heappush(queue, (edge_cost, next_city))
         return total if len(visited) == N else -1
+```
+### 5. breath first search
+```
+def bfs(posi):
+    nonlocal queue, visited
+    vd = validdirc(posi)
+    while vd:
+        d = vd.pop()
+        stop = list(go(posi, d))
+        if stop == destination:
+            return True
+        queue.append(stop)
+        if not queue:
+            return False
+        n = queue.pop()
+        visited.add(tuple(n))
+        return bfs(n)
+```
+### 6. depth first search
+```
+
 ```
 
 
